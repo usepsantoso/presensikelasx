@@ -1,0 +1,6 @@
+{
+  "name": "Presensi Kelas X - SMA Regina Pacis Surakarta",
+  "description": "Aplikasi presensi digital siswa Kelas X SMA Regina Pacis Surakarta dengan integrasi Google Spreadsheet sebagai database rekapan kehadiran.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

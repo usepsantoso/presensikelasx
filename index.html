@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presensi Kelas X - SMA Regina Pacis Surakarta</title>
+    <meta name="description" content="Aplikasi presensi digital siswa Kelas X SMA Regina Pacis Surakarta dengan integrasi Google Spreadsheet sebagai database rekapan kehadiran." />
+    <meta property="og:title" content="Presensi Kelas X - SMA Regina Pacis Surakarta" />
+    <meta property="og:description" content="Aplikasi presensi digital siswa Kelas X SMA Regina Pacis Surakarta dengan integrasi Google Spreadsheet sebagai database rekapan kehadiran." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        // Provide both getter and setter for window.fetch to prevent browser extension crashes
+        try {
+          var _rawFetch = window.fetch;
+          var _currentFetch = function() {
+            return (_rawFetch || window.fetch).apply(window, arguments);
+          };
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return _currentFetch;
+            },
+            set: function(newFetch) {
+              _currentFetch = newFetch;
+            }
+          });
+        } catch (e) {
+          // Fallback gracefully
+        }
+
+        // Prevent external chrome-extension errors from disrupting the web app
+        window.addEventListener('error', function(e) {
+          if (
+            (e.filename && e.filename.indexOf('chrome-extension://') !== -1) ||
+            (e.message && e.message.indexOf('Cannot set property fetch') !== -1)
+          ) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
